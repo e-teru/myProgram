@@ -1,0 +1,1359 @@
+@prefix rdf:  	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ont:  	<http://www.daml.org/2001/03/daml-ont#> .
+@prefix wine:	<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#> .
+@prefix dbp: 	<http://dbpedia.org/ontology/> .
+@prefix edu: 	<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix bevon: 	<http://rdfs.co/bevon/> .
+@prefix frapo: 	<http://purl.org/cerif/frapo/>.
+@prefix gr: 	<http://www.heppnetz.de/ontologies/goodrelations/v1#> .
+@prefix food: 	<http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#> .
+@prefix sake: 	<http://www.ohsuga.is.uec.ac.jp/sake#> .
+@prefix foods: 	<http://data.lirmm.fr/ontologies/food#> .
+@prefix lgdo: 	<http://linkedgeodata.org/ontology/> .
+@prefix dbpedia-ja: <http://ja.dbpedia.org/resource/> .
+@prefix being: <http://contextus.net/ontology/ontomedia/ext/common/being#used-by> .
+@prefix eclap: <http://www.eclap.eu/schema/eclap/> .
+@prefix : <#> .
+
+dbpedia-ja:日本酒 				rdfs:label  "日本酒" .
+dbpedia-ja:酒造  				rdfs:label  "酒造" .
+dbpedia-ja:銘柄 					rdfs:label  "銘柄" .
+dbpedia-ja:映画  				rdfs:label  "映画" .
+dbpedia-ja:雑誌  				rdfs:label  "雑誌" .
+dbpedia-ja:テレビ番組 			rdfs:label  "テレビ番組" .
+dbpedia-ja:アニメーション 			rdfs:label  "アニメーション" .
+dbpedia-ja:テレビ局 				rdfs:label  "テレビ局" .
+dbpedia-ja:漫画 					rdfs:label  "漫画" .
+dbpedia-ja:航空会社 				rdfs:label  "航空会社" .
+dbpedia-ja:コンビニエンスストア 	rdfs:label  "コンビニエンスストア" .
+wine:Wine 						rdfs:label  "ワイン" .
+dbpedia-ja:大統領 				rdfs:label  "大統領" .
+dbpedia-ja:企業 					rdfs:label  "株式会社" .
+dbpedia-ja:ホテル 				rdfs:label  "ホテル" .
+dbpedia-ja:酒造  				rdfs:label  "ワイナリー" .
+dbpedia-ja:おつまみ  				rdfs:label  "おつまみ" .
+dbpedia-ja:コンテスト  			rdfs:label  "コンテスト" .
+dbpedia-ja:価格					rdfs:label  "価格" .
+dbpedia-ja:武将 					rdfs:label  "武将" .
+dbpedia-ja:芸能人 				rdfs:label  "芸能人" .
+dbpedia-ja:レストラン 			rdfs:label  "レストラン" .
+
+:Glass  a rdfs:Class;
+		rdfs:label "グラス".
+:Food 	a rdfs:Class;
+		rdfs:label "食べ物".
+:Scene  a rdfs:Class;
+		rdfs:label "シーン".
+:Taste  a   rdfs:Class;
+		rdfs:label "テイスティングに用いる言葉".
+:SweetFruit a rdfs:Class;
+			rdfs:label "果実".
+:desert a rdfs:Class;
+		rdfs:label "菓子".
+:newspaper a rdfs:Class;
+			rdfs:label "新聞".
+:Brand a rdfs:Class;
+		rdfs:label "銘柄".
+:PoliticalParty a rdfs:Class;
+				rdfs:label "晩餐会".
+:Animal a rdfs:Class;
+		rdfs:label "動物".
+:Creater a rdfs:Class;
+		 rdfs:label "作り手".
+:Country a rdfs:Class;
+		 rdfs:label "国".
+:Winery a rdfs:Class;
+		rdfs:label "ワイナリー".
+
+
+
+
+sake:hasTouji			rdf:type	rdfs:ObjectProperty;
+						rdfs:label 	"杜氏".
+
+
+sake:maker			rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "醸造した団体".
+sake:used_by	 		rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "使われたもの".
+sake:use		 		rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "利用したもの".
+
+
+sake:creater 			rdf:type    rdfs:ObjectProperty;
+						rdfs:label  "作り手".
+sake:hometown 			rdf:type    rdfs:ObjectProperty;
+						rdfs:label  "出身".
+sake:favoritePerson 		rdf:type    rdfs:ObjectProperty;
+						rdfs:label  "気に入っている人".
+sake:winery 			rdf:type 	rdfs:ObjectProperty;
+						rdfs:label  "ワイナリー".
+
+sake:url 				rdf:type	rdfs:ObjectProperty;
+						rdfs:label 	"URL".
+sake:comment 			rdf:type	rdfs:ObjectProperty;
+						rdfs:label 	"コメント".
+sake:photo 				rdf:type 	rdfs:Property;
+						rdfs:label 	"画像URL".
+sake:address 			rdf:type    rdfs:ObjectProperty;
+						rdfs:label  "住所".
+sake:brand 			rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "銘柄".
+sake:sando 				rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "酸度".
+sake:alcohol 			rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "アルコール度数".
+sake:nihonsyudo 		rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "日本酒度".
+sake:aminosando 		rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "アミノ酸度".
+sake:siyoumai 			rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "使用米".
+sake:seimaibuai 		rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "精米歩合".
+sake:koubo  			rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "使用酵母".
+sake:scene				rdf:type	rdfs:ObjectProperty;
+						rdfs:label 	"適したシーン".
+sake:glass 				rdf:type	rdfs:ObjectProperty;
+						rdfs:label 	"適したグラス".
+sake:foodMatching 		rdf:type 	rdfs:ObjectProperty;
+				  		rdfs:label 	"相性の良いおつまみ".
+sake:appearance 		rdf:type 	rdfs:ObjectProperty;
+						rdfs:label 	"登場したメディア".
+sake:tasting			rdf:type	rdfs:ObjectProperty;
+						rdfs:label	"テイスティング".
+sake:supply				rdf:type	rdfs:ObjectProperty;
+						rdfs:label 	"提供された場所".
+sake:temperature		rdf:type	rdfs:ObjectProperty;
+						rdfs:label 	"適した温度".
+sake:isAwardedBy 		rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "受賞歴".
+sake:cost 				rdf:type	rdfs:ObjectProperty;
+						rdfs:label  "価格" .
+sake:brandUrl 			rdf:type	rdfs:ObjectProperty;
+						rdfs:label 	"BrandURL" .
+sake:person 			rdf:type 	rdfs:ObjectProperty;
+						rdfs:label  "関連する人" .
+
+
+:hakkai_gin				a 					dbpedia-ja:日本酒;
+						rdfs:label 			"純米吟醸　八海山";
+						sake:maker	 	:hakkai ;
+						sake:brand 		:hakkaisan;
+						sake:tasting 		:taste_pear;
+						sake:tasting 		:taste_creamy;
+						sake:scene 			:scene_summer;
+						sake:scene 			:scene_beginner;
+						sake:scene 			:scene_woman;
+						sake:scene 			:scene_party;
+						sake:temperature 	"10-15";
+						sake:glass  		:glass_flute;
+						sake:glass 	 		:glass_small;
+						sake:foodMatching	:white_fish_ponzu;
+						sake:foodMatching 	:chicken_herb;
+						sake:alcohol 		"15.5%";
+						sake:nihonsyudo 	"+4.0";
+						sake:sando 			"1.2";
+						sake:aminosando 	"1.1";
+						sake:cost 			:2000yen_lebel;
+						sake:siyoumai 		"山田錦(麹米・掛米）、美山錦（掛米）、５百万石他（掛米）";
+						sake:koubo 		 	"アキタコンノNo.2";
+						sake:comment		"よく晴れた冬の日、澄み渡る空気の中で日差しに溶け始める雪。そんなときに感じる、なんとも言えない静けさとおだやかさとを持ったお酒です。";
+						sake:url 			"http://www.hakkaisan.co.jp/sake/junmaiginjo".
+
+:hakkai		a 				dbpedia-ja:酒造;
+			rdfs:label 		"八海醸造";
+			sake:appearance :nikkei;
+			sake:appearance :niigatanippou;
+			sake:appearance :global_navi;
+			sake:url 		"http://www.hakkaisan.co.jp/";
+			sake:photo 		"http://www.hakkaisan.co.jp/img/sake-jyunmaiginjo-photo.jpg";
+			sake:comment 	"八海醸造は、新潟県南魚沼市長森に本社を置く企業。創業は1922年（大正11年）で、新潟の地酒を代表する銘柄『八海山』の酒蔵である。製造方針は、「大吟醸酒製造技術の全酒類製造への応用」。新潟県内では、朝日酒造（売上高81億）・菊水酒造（売上51億）に次ぐ業界3位である。清酒以外では、発酵食品企業として『米・麹・発酵』をコンセプトにしている。".
+
+:nikkei				a 	  				:newspaper;
+					rdfs:label 			"日本経済新聞".
+
+:niigatanippou		a 	  				:newspaper;
+			    	rdfs:label 			"新潟日報".
+:global_navi 		a 					dbpedia-ja:テレビ番組;
+			 		rdfs:label 			"グローバルナビ・フロント";
+			 		dbpedia-ja:放送 		:bs-tbs.
+			 		
+:bs-tbs				a 			  		:broadcast;
+					rdfs:label 			"BS-TBS".
+
+
+:hakkaisan			a 	 				dbpedia-ja:銘柄;
+		   			rdfs:label 			"八海山";
+		   			sake:used-by		:sakemanju;
+		   			sake:used-by 		:sakejelly;
+		   			sake:used_by		:ichi_ichi;
+		   			sake:comment "仕込水『雷電様の清水』など酒造りに最適の雪国魚沼の環境条件と「寒梅と八海山は兄弟蔵」と言われた酒造りの技で、淡麗辛口の酒質評価が高い食中酒。".
+
+:sakemanju			a 	  				:desert;
+		    		rdfs:label 			"酒まんじゅう";
+		    		sake:comment 		"まんじゅうをふたつに割っていただくと生地に練り込んだ八海山の香りが柔らかく立ち昇り、口に含むと甘い香りが鼻に抜けていきます。";
+		    		sake:photo 			"http://xc525.eccart.jp/x638/images/11_l.jpg";
+		    		sake:url 			"http://xc525.eccart.jp/x638/item_detail/itemCode,4953940001353/".
+:sakejelly			a 	  				:desert;
+		    		rdfs:label 			"酒ゼリー";
+		    		sake:comment 		"越後魚沼を代表する地酒「八海山」の本醸造を使った酒ゼリー。口に含むと柔らかな甘みとお酒の風味がいっぱいに広がり“ほんわか”した気分になる、ちょっと贅沢な大人のデザートです。";
+		    		sake:photo 			"http://xc525.eccart.jp/x638/images/10_l.jpg";
+		    		sake:url 			"http://xc525.eccart.jp/x638/item_detail/itemCode,4947016140114/?IndexSESSID=1f8f312fbffe081cb0eed6e07db33a799ae565b99d3feda751c51b96ed86209c".
+:ichi_ichi			a 					:desert;
+					rdfs:label   		"日本酒ケーキ『壱ノ壱ノ壱』";
+					sake:url 			"http://news.livedoor.com/article/detail/10150744/";
+					sake:comment 		"「壱ノ壱ノ壱」は、ホテルオリジナルの純米吟醸酒「壱ノ壱ノ壱」と新潟の銘酒「八海山」の酒粕の風味を効かせた、芳醇な日本酒の香りが楽しめるケーキ。";
+					sake:photo 			"http://www.vogue.co.jp/lifestyle/news/2015-05/24/palacehoteltokyo".
+:taste_pear			a 	  				:SweetFruit;
+	  				rdfs:label 			"洋梨".
+:taste_creamy 		a 					:Taste;
+			  		rdfs:label 			"なめらか".
+:scene_summer 		a 					:Scene;
+			  		rdfs:label 			"夏".
+:scene_beginner		a 	  				:Scene;
+			 		rdfs:label 			"初心者".
+:scene_woman 		a 	   				:Scene;
+			 		rdfs:label 			"女性".	
+:scene_party 		a 	  			 	:Scene;
+			 		rdfs:label 			"パーティ".
+
+:glass_flute 		a 	   						:Glass;
+			 		rdfs:label 					"フルートグラス".
+:glass_small 		a 	   						:Glass;
+			 		rdfs:label 					"小型のワイングラス".
+:white_fish_ponzu 	a 				  			dbpedia-ja:おつまみ;
+			  	  	rdfs:label 		  			"白身魚の薄造り柚子ポン酢";
+			  	  	sake:material 				:white_fish;
+			  	  	sake:material 				:yuzu_ponzu .
+:white_fish			a 	  						:Food ;
+					rdfs:label 					"白身魚".
+:yuzu_ponzu			a 	  						:Food ;
+					rdfs:label 					"柚子ポン酢".
+:chicken_herb 		a 						  	dbpedia-ja:おつまみ;
+			  		rdfs:label 				 	"鶏肉の香草焼き";
+			  		sake:material 	 			:herb .
+:chicken 			a 							:Food;
+		 			rdfs:label 					"鶏肉".
+:herb 				a 							:Food ;
+	  				rdfs:label 					"香草".
+
+
+:eric_Bordelet_Poire_Granit	a 			  		wine:Wine;
+							rdfs:label 	  		"2013 Eric Bordelet Poiré Granit";
+							sake:maker	 	"Eric Bordelet" ;
+							sake:tasting 	  	:taste_pear ;
+					 		sake:url 			"http://www.cellartracker.com/wine.asp?iWine=1830478&searchId=C9784C69%23selected%253DW1830478_1_K0107f6408c5547d02181f84de9877e7e".
+
+:bourgogne_La_Vignee		a 			  		wine:Wine;
+					 		rdfs:label 	  "ブシャール　ペール　エ　フィス　ブルゴーニュ　ピノ　ノワール　ラ　ヴィニェ";
+					 		sake:foodMatching 	:white_fish_ponzu;
+					 		sake:url 			"http://item.rakuten.co.jp/wineuki/628953/".
+
+:esupino	a 			wine:Wine;
+		 	rdfs:label 	"ビーニャ・ウィリアム・フェーヴル　エスピノ・シャルドネ";
+		 	sake:tasting    :taste_lemon;
+		 	sake:scene 	    :scene_beginner ;
+			sake:url 		"http://item.rakuten.co.jp/vin2/espino/".
+:taste_lemon 				a 			:SweetFruit;
+	  		 				rdfs:label 	"レモン".
+
+
+:hakkai_toku a 					dbpedia-ja:日本酒;
+			 rdfs:label 		"八海山　特別純米原酒";
+			 sake:maker 		:hakkai;
+			 sake:brand 		:hakkaisan;
+			 sake:appearance 	:leon;
+			 sake:temp 			"-12";
+			 sake:glass 		:glass_shot;
+			 sake:appearance 	:kitchen;
+			 sake:alcohol 		"17.5%";
+			 sake:nihonsyudo 	"0";
+			 sake:sando 		"1.5";
+			 sake:aminosando 	"1.4";
+			 sake:siyoumai 		"五百万石（麹米）、山田錦、ゆきの精、トドロキワセ（掛米）";
+			 sake:seimaibuai 	"55%";
+			 sake:koubo 		"協会1001,協会1801";
+			 sake:cost 			:1000yen_lebel;
+			 sake:comment 		"長期低温発酵もろみによる、ふくよかで気品ある香りをお楽しみいただける一品。";
+			 sake:photo 		"http://www.hakkaisan.co.jp/img/sake-jyunmaigensyu-photo.jpg";
+			 sake:url 			"http://www.hakkaisan.co.jp/sake/junmaigensyu".
+
+:leon 		 a 				dbpedia-ja:雑誌;
+	  		 rdfs:label 	"LEON　８月号";
+	  		 sake:maker 	"株式会社主婦と生活社".
+
+:glass_shoto a 				:Glass;
+			 rdfs:label 	"ショットグラス".
+
+:kitchen 	 a 				dbpedia-ja:テレビ番組;
+		 	 rdfs:label 	"キッチンが走る！";
+		 	 sake:appearance 	:nhk .
+:nhk 		 a     			dbpedia-ja:テレビ局;
+	 		 rdfs:label 	"NHK総合".
+
+:burunero_di_montalcno	a 					wine:Wine;
+					   	rdfs:label 			"ピニーノ　ブルネロ・ディ・モンタルチーノ";
+					    sake:winery 		:pinino;
+					    sake:appearance 	:global_navi;
+					    sake:tasting 		"落ち着いた酸とタンニンを感じるフルボディ";
+					 	sake:url 			"http://www.pieroth.jp/index.php?dispatch=products.view&product_id=10001436".
+
+:pinino					a 				dbpedia-ja:ワイナリー;
+						sake:address  	"イタリア トスカーナ州".
+
+:chateu_de_saint_cosme a wine:Wine;
+					   rdfs:label "シャトー・ムートン・ロートシルト";
+					   sake:appearance	:kaminoshizuku;
+					   sake:url 		"http://item.rakuten.co.jp/umemura/326890/" .
+:kaminoshizuku a dbpedia-ja:テレビ番組;
+			   rdfs:label "神の雫".
+
+:moutard_brut_grande_cuvee a wine:Wine;
+						   rdfs:label "MOUTARD BRUT GRANDE CUVEE / CHAMPAGNE";
+						   sake:appearance :leon;
+					 	   sake:url 			"https://www.vintagecellars.com.au/Sparkling/moutard-brut-grande-cuvee-nv-750ml_8642056".
+
+:dassai_jungin	a 					dbpedia-ja:日本酒;
+			rdfs:label 			"獺祭　純米大吟醸　磨き二割三分"@ja; 
+			sake:maker 		:asahi ;
+			sake:brand 		:dassai;
+			sake:tasting 		:taste_sweet_fruits;
+			sake:tasting 		:taste_creamy;
+			sake:tasting 		:taste_fresh;
+			sake:tasting 		:taste_umami;
+			sake:scene 			:scene_spring;
+			sake:scene 			:scene_summer;
+			sake:scene 			:scene_wine_lovers;
+			sake:scene 			:scene_woman;
+			sake:temperature 	"15";
+			sake:glass 			:glass_flute;
+			sake:glass 			:glass_burgundy;
+			sake:foodMatching 	:western_food; 
+			sake:foodMatching 	:spring_vegetables_terrine;
+			sake:foodMatching 	:raw_oyster_lemon;
+			sake:foodMatching 	:white_asparagus;
+			sake:used_by 		:saison-dassai;
+			sake:supply 		:jal;
+			sake:supply 		:taillevent;
+			sake:appearance 	:eva;
+			sake:appearance  	:sekaisinsyutu;
+			sake:appearance 	:hokotate;
+			sake:appearance 	:kanburia;
+			sake:appearance  	:rondon_heart;
+			sake:person 		:daitahikaru;
+			sake:alcohol 		"15~16度";
+			sake:siyoumai 		"山田錦";
+			sake:seimaibuai 	"23%";
+			sake:sando 			"1.1";
+			sake:nihonsyudo 	"+4.0";
+			sake:cost 			:4000yen_lebel;
+			sake:photo 			"http://www.jizake.com/img/products/SakeD3014_720_2.jpg";
+			sake:comment 		"精米歩合が23%。\nつまり、お米(玄米)の外側の77%を削り取ったという驚異的な精米をされたお米で造られた純米大吟醸は、当時から多くの日本酒ファンの注目を集めたお酒でした。グラスから上立つ香りは豊か、果実というより花のような甘い香り。口当たりは非常に優しく、舌の上を抵抗無く滑り、染み込むように喉に流れる感覚は水の如し。最後にフワリとした香りの広がりを残す。";
+	 		sake:url 			"http://www.jizake.com/html/SakeD3014.html".
+
+:asahi						a 					dbpedia-ja:酒造;
+	    					rdfs:label 				"旭酒造".
+
+:dassai						a 					:Brand;
+							rdfs:label 			"獺祭";
+							sake:appearance 	:eva.
+
+:taste_sweet_fruits			a 	  				:Fruits;
+			 				rdfs:label 			"新鮮な果実の匂い".
+:taste_fresh 				a 					:Taste;
+			 				rdfs:label 			"スッキリとした酸味".
+:taste_umami 				a 					:Taste;
+			 				rdfs:label 			"旨味".
+:scene_spring 				a 					:Scene;
+			  				rdfs:label 			"春".
+:scene_wine_lovers 			a 	 				:Scene;
+				   			rdfs:label 			"ワイン好き".
+:glass_burgundy				a 	  				:Glass;
+							rdfs:label 			"ブルゴーニュ型ワイングラス".
+:western_food 				a 					:Food;
+			  				rdfs:label 			"西洋料理".
+:spring_vegetables_terrine	a 	  				:Food;
+						    rdfs:label 			"春野菜のテリーヌ".
+:raw_oyster_lemon			a 					:Food;
+				    		rdfs:label 			"生牡蠣レモン";
+				    		sake:material 		:raw_oyster .
+:raw_oyster 				a     				:Food;
+							rdfs:label 			"生牡蠣" .
+:white_asparagus 			a 	   				:Food;
+				 			rdfs:label 			"ホワイトアスパラガス" .
+:saison-dassai				a 					:dbpedia-ja:お菓子;
+			    			rdfs:label 			"獺祭ショコラ";
+			    			sake:appearance 	:matsuko .
+:matsuko 					a 	   				dbpedia-ja:テレビ番組;
+		 					rdfs:label 			"マツコの知らない世界" .
+:jal 						a 					dbpedia-ja:航空会社;
+	 						rdfs:label 			"JAL国際線" .
+:eva 						a 					dbpedia-ja:アニメーション;
+	 						rdfs:label 			"新世紀エヴァンゲリオン" .
+:sekaisinsyutu 				a 					dbpedia-ja:テレビ番組;	
+							rdfs:label 			"世界進出バラエティ！メイドインジャパン　日本に誇りもてるSP！" .
+:hokotate 					a 					dbpedia-ja:テレビ番組;
+							rdfs:label 			"ほこたて" .
+:kanburia 					a 					dbpedia-ja:テレビ番組;
+							rdfs:label 			"カンブリア宮殿" .
+:rondon_heart 				a 					dbpedia-ja:テレビ番組;
+							rdfs:label 			"ロンドンハーツ" .
+:taillevent 				a 					dbpedia-ja:レストラン;
+							rdfs:label 			"TAILLEVENT" .
+:daitahikaru 				a 					dbpedia-ja:芸能人;
+							rdfs:label 			"だいたひかる" .
+
+:clarendelle_blanc_by_chateau_haut_brion a wine:Wine;
+										rdfs:label "CLARENDELLE BLANC BY CHATEAU HAUT BRION" ;
+										sake:appearance :nikkei_plus1;
+										sake:appearance :lupin;
+					 					sake:url 			"https://www.enoteca.co.jp/item/detail/0101059623B2".
+:nikkei_plus1 a 	:newspaper;
+			  rdfs:label "日本経済新聞".
+:lupin	a 		dbpedia-ja:アニメーション;
+		rdfs:label 	"ルパン3世".
+
+:champagne_salon_2002 a 		wine:Wine;
+					  rdfs:label 	"シャンパーニュ　サロン　2002";
+					  sake:supply 	:jal;
+					  sake:url 		"http://i.isetan.co.jp/shinjuku/grandecave/2014/04/-2002.html".
+:yosemite_road_cabernet_sauvignon a wine:Wine;
+								  rdfs:label "Yosemite Road Cabernet Sauvignon";
+								  sake:maker :seven_eleven;
+								  sake:appearance :matsuko;
+					 			  sake:url 			"https://vinica.me/Yosemite-Road-Cabernet-Sauvignon-w4213" .
+:domenu_moro_node a wine:Wine;
+					rdfs:label "ドメーヌ・モロー・ノーデ・シャブリ";
+					sake:supply :taillevent .
+
+
+:seven_eleven a dbpedia-ja:コンビニエンスストア;
+			  rdfs:label "セブンイレブン".
+
+:isojiman_tokubetu 	a 				dbpedia-ja:日本酒;
+				   	rdfs:label			"磯自慢　特別純米　雄町";
+				   	sake:tasting 		:taste_sweet_fruits;
+				   	sake:isAwardedBy 	:iwc;
+				   	sake:maker 	:isojimansyuzou;
+				   	sake:brand 	:isojiman;
+				   	sake:sando 		"1.2";
+				   	sake:alcohol 	"16~17度";
+				   	sake:nihonsyudo	"+4";
+				   	sake:aminosando "1.0";
+				   	sake:seimaibuai "55%";
+				   	sake:siyoumai	"岡山雄町";
+				   	sake:koubo      "";
+				   	sake:cost 		:3000yen_lebel;
+				   	sake:comment "吟醸規格まで精米し、手造りの麹と優良酵母を使用、南アルプス間ノ岳（日本百名山）を源泉とする名水大井川伏流水を用いて、低温でゆっくりと醗酵させています。上槽のタイミングを計り搾られた特別純米酒は、吟醸香と共にフルーティ、そして深い味わいを持っています。";
+				   	sake:photo "http://thumbnail.image.rakuten.co.jp/@0_mall/hasegawasaketen/cabinet/sake4/1001250.jpg?_ex=300x300&s=1&r=1";
+					 		sake:url 			"http://item.rakuten.co.jp/hasegawasaketen/1001250/".
+
+:iwc 				a 			dbpedia-ja:コンテスト;
+		 			rdfs:label 	"International Wine Challenge".
+
+:isojimansyuzou		a 				dbpedia-ja:酒造;
+					rdfs:label 		"磯自慢酒造株式会社";
+					sake:address 		"静岡県焼津市鰯ヶ島307".
+:isojiman 			a 			dbpedia-ja:銘柄;
+					rdfs:label 	"磯自慢".
+
+:vina_mara 			a 					wine:Wine;
+		   			rdfs:label 			"Tesco finest Vina Mara Rioja Gran Reserva 2007";
+		   			sake:winery 	:bottle_green;
+		   			sake:isAwardedBy 	:iwc;
+					 		sake:url 			"http://www.internationalwinechallenge.com/canopy/beverage_details.php?wid=77462".
+		   
+:bottle_green 		a 				dbpedia-ja:ワイナリー;
+			  		rdfs:label 		"Bottle Green LTD";
+			  		sake:address 	"Rioja Baja; Spain".
+
+:koru_sauvignon_blanc_2012 a 					wine:Wine ;
+						   rdfs:label 			"Koru Sauvignon Blanc; 2012";
+						   sake:isAwardedBy 	:iwc.
+
+:pask_declaration_chardonnay_2012 a wine:Wine;
+								  rdfs:label "Pask Declaration Chardonnay; 2012";
+								  sake:isAwardedBy :iwc;
+					 		sake:url 			"http://www.internationalwinechallenge.com/canopy/beverage_details.php?wid=72425" .
+
+
+
+
+
+
+
+
+
+:midorikawa_junmaigin a 					dbpedia-ja:日本酒;
+					  rdfs:label 			"緑川　純米吟醸";
+					  sake:brand 		:midorikawa;
+					  sake:maker 	 	:midorikawasyuzou;
+					  sake:used 			:jizakecake;
+					  sake:tasting 			:taste_melon;
+					  sake:tasting 			:taste_pineapple;
+					  sake:tasting 			:taste_maroon;
+					  sake:foodMatching 	:sashimi;
+					  sake:appearance 		:kenmin;
+					  sake:sando 			"";
+				   	  sake:alcohol		 	"15~16度";
+				   	  sake:nihonsyudo		"+4";
+				   	  sake:aminosando 		"";
+				   	  sake:seimaibuai 		"55%";
+				   	  sake:siyoumai			"五百万石";
+				   	  sake:koubo      		"";
+				   	  sake:cost 			:1000yen_lebel;
+				   	  sake:photo 			"http://img17.shop-pro.jp/PA01167/331/product/44861163.jpg?20121003131829";
+					  sake:url 				"http://www.yukinosake.com/04-17-midorikawa.html";
+					  sake:comment 			"上立ち香はパインともメロンとも言えそうで華やか。含むと一瞬薄い！と思えるほど淡くスッキリとしている。徐々に温度が常温になるにしたがい、ほのかな栗のような甘みが顔を出す。引き際もスッパリと鮮やか。冷やして飲むかぬるめの燗がおすすめです。".
+
+:midorikawasyuzou 	  a 			dbpedia-ja:酒造;
+				  	  rdfs:label 	"緑川酒造".
+:midorikawa 		  a 			:Meigara;
+					  rdfs:label 	"緑川".
+:jizakecake			  a 			:desert;
+					  rdfs:label 	"地酒ケーキ緑川".
+:taste_melon 		  a 			:SweetFruit;
+			 		  rdfs:label 	"メロン".
+:taste_pineapple 	  a 			:SweetFruit;
+				      rdfs:label 	"パイナップル".
+:taste_maroon         a 			:Taste;
+			  	      rdfs:label 	"栗".
+:sashimi 			  a 			:Food;
+		 			  rdfs:label 	"刺身".
+:kenmin 			   a 			dbpedia-ja:テレビ番組;
+					   rdfs:label 	"秘密のケンミンショー".
+:cote_de_beaune_villages_les_combottes a 					wine:Wine;
+									   rdfs:label 			"コート・ド・ボーヌ・ヴィラージュ・レ・コンボット 2004／ドメーヌ・ダルデュイ";
+									   sake:foodMatching 	:sashimi;
+					 		sake:url 	"http://wine.toashoji.com/products/inf_detail.php?item_no=4140720035" .
+
+:cote_est a wine:Wine;
+			rdfs:label "ドメーヌ・ラファージュ・コテ・エスト";
+			sake:tasting :taste_melon;
+			sake:url 	"http://item.rakuten.co.jp/ynstokyo/21-50-126-0048/".
+
+:rojer_gurart_kava a wine:Wine;
+					rdfs:label "ロジャー・グラート・カヴァ・ロゼ";
+					sake:appearance :kakuduke .
+
+:kakuduke a dbpedia-ja:テレビ番組;
+			rdfs:label "芸能人格付けチェック" .
+
+
+
+:hukuju_jungin			a 				dbpedia-ja:日本酒;
+					rdfs:label 		"福寿　純米吟醸";
+					sake:maker 	:koubesyusinkan;
+					sake:brand 	:hukuju;
+					sake:supply 	:nobel_dinner_party;
+					sake:sando 			"1.6";
+				   	  sake:alcohol		 	"15~16度";
+				   	  sake:nihonsyudo		"+2.5";
+				   	  sake:aminosando 		"1.3";
+				   	  sake:seimaibuai 		"60%";
+				   	  sake:siyoumai			"兵庫夢錦";
+				   	  sake:koubo      		"";
+				   	 sake:cost 			:1000yen_lebel;
+					sake:comment    "熟した桜桃のような豊かな香り。フレッシュな果物と滑らかな米の旨味を味わえる。生クリームやカッテージチーズとも素晴らしい相性です。2009年インターナショナル・サケ・チャレンジ(International Sake Challenge)」において、純米吟醸部門で最高金賞（TROPHY）を受賞しました。 ";
+					sake:photo 		"http://www.shushinkan.co.jp/jougin/image/top-img.jpg";
+					sake:url 		"http://item.rakuten.co.jp/liquor-base/010-0077/#010-0077" .
+:nobel_dinner_party	a 				:PoliticalParty;
+					rdfs:label 		"ノーベル賞授賞式後の晩餐会".
+:koubesyusinkan     a 				dbpedia-ja:酒造;
+					rdfs:label 		"神戸酒心館".
+:joseph_perrier_champagne_brut_blanc_de_blancs	a 				wine:Wine;
+											    rdfs:label 		"ジョセフ・ペリエ・シャンパーニュ・ブラン・ド・ブラン・ブリュット“キュヴェ・ロワイヤル”AOCシャンパーニュ";
+											    sake:supply 	:nobel_dinner_party;
+											    sake:scene 		:scene_wedding;
+					 							sake:url 			"http://item.rakuten.co.jp/wineuki/903423/".
+:scene_wedding 		 a 				:Scene;
+			   		 rdfs:label   	"結婚式".
+:hukuju 			 a 				dbpedia-ja:銘柄;
+					 rdfs:label     "福寿";
+					 sake:comment	"福寿の酒造りは、5名の蔵人を中心に秋から春にかけて行う。手造りのため生産量に限りはあるが、米の旨みを引き出した「濃醇で綺麗な味わい」を目指す。日本の名水百選に選ばれている「宮水」（硬水）と兵庫県で育まれた最良の原料米を使用。「箱麹法」といわれる完全手作業の麹造りを行う。蔵内の衛生管理を徹底し、より高品質な酒造りを目指すためにコンピューターによる温度制御を導入しています".
+
+:trois_de_valandrand a 				wine:Wine;
+					 rdfs:label 	"3(Trois) de Valandrand" ;
+					 rdfs:label 	"トロワ・ド・ヴァランドロー 2004";
+					 sake:supply 	:nobel_dinner_party;
+					 sake:url 			"http://item.rakuten.co.jp/caesar/30579/" .
+:jorge_ordonez		 a 				wine:Wine;
+ 					 rdfs:label 	"ホルフェ・オルドネス・ヴィクトリア　No.2　 2010";
+ 					 sake:supply 	:nobel_dinner_party;
+					 sake:url 		"http://item.rakuten.co.jp/ynstokyo/22-11-149-0177/".
+
+
+
+
+:tamakawa_ice 		 a 					dbpedia-ja:日本酒;
+			  		 rdfs:label 		"玉川　純米吟醸　アイスブレーカー　無濾過生原酒";
+			  		 sake:maker      :kinositasyuzou;
+			  		 sake:brand 		:tamagawa;
+			  		 sake:appearance 	:penguin;
+			  		 sake:sando 			"";
+			  		 sake:alcohol		 	"17~18度";
+				   	  sake:nihonsyudo		"+2.0";
+				   	  sake:aminosando 		"";
+				   	  sake:seimaibuai 		"60%";
+				   	  sake:siyoumai			"日本晴（滋賀県）";
+				   	  sake:koubo      		"";
+			  		 sake:scene 		:scene_summer;
+			  		 sake:creater  		:philip_harper;
+			  		 sake:cost 			:1000yen_lebel;
+			  		 sake:comment 		"この商品は冬季に搾ったお酒を約半年間熟成させた純米吟醸原酒です。御想像通り、濃い味をしています。しかし、玉川が造った純米吟醸酒にしては、ペーシックな部類に入ります。このお酒が「アイスブレーカー」と呼ばれる理由は、英語で緊張感をほぐし座を和ませることを「Ice Breaker」と言うことに加え、このお酒自体がロックでも美味しく飲めることに由来しています。";
+			  		 sake:photo 		"http://www.jizake.com/img/products/Sake3006_500_1.jpg";
+					 sake:url 			"http://www.jizake.com/html/Sake3006.html".
+:kinositasyuzou		 a 				dbpedia-ja:酒造;
+					 rdfs:label 	"木下酒造".
+:tamagawa 			 a 				dbpedia-ja:銘柄;
+					 rdfs:label    "玉川".
+:penguin 			 a 				:Animal;
+		 			 rdfs:label 	"ペンギン".
+:philip_harper		 a 				:Creater;
+			    	 rdfs:label 	"フィリップ・ハーパー";
+			    	 sake:hometown 		:england .
+:england a 			:Country;
+		 rdfs:label "イギリス".
+
+:cabernet_sauvignon	a 					wine:Wine;
+					rdfs:label 			"Tussock Jumper Cabernet Sauvignon ";
+					sake:winery 		:tussock_jumper;
+					sake:tasting 		:taste_blackcurrants;
+					sake:tasting 		:taste_blackberry;
+					sake:tasting 		:taste_chocolate;
+					sake:foodMatching 	:french_food;
+					sake:foodMatching 	:spanish_food;
+					sake:foodMatching 	:pizza;
+					sake:foodMatching 	:red_meat;
+					sake:url 			"http://www.tussockjumperwines.com/the-wines/cabernet-sauvignon/" .
+
+:tussock_jumper			a 			dbpedia-ja:ワイナリー;
+						rdfs:label 	"Tussock Jumper".
+:taste_blackcurrants	a 			sake:taste;
+			    		rdfs:label 	"クロフサスグリ".
+:taste_blackberry		a 			:SweetFruit;
+						rdfs:label 	"ブラックベリー".
+:taste_chocolate		a 			:Taste;
+		    			rdfs:label 	"チョコレート".
+:french_food 			a 			:Food;
+			 			rdfs:label 	"フランス料理".
+:spanish_food			a 			:Food;
+			  			rdfs:label 	"スペイン料理".
+:red_meat				a 			:Food;
+		  				rdfs:label 	"赤肉".
+
+
+
+
+
+:le_canon_rouge a 				wine:Wine;
+				rdfs:label 		"VdF Le Canon　Rouge";
+				sake:creater 	:oooka_hirotake;
+				sake:url 		"http://www.budouya.jp/products/detail.php?product_id=1724" .
+:oooka_hirotake a 				:Creater;
+				rdfs:label 		"大岡弘武";
+				sake:hometown 	:japan .
+:japan 			a 				:Country;
+	   			rdfs:label 		"日本".
+
+
+:seikon_jungin a					dbpedia-ja:日本酒;
+			   rdfs:label			"越の誉　純米吟醸 清吟";
+			   sake:maker		:harasyuzou;
+			   sake:brand 		:koshinohomare;
+			   sake:supply			:jal;
+			   sake:favoritePerson		:tanakakakuei;
+			   sake:tasting			:taste_fresh;
+			   sake:sando 			"1.4";
+			   sake:alcohol		 	"15~16度";
+				   	  sake:nihonsyudo		"+3.0";
+				   	  sake:aminosando 		"";
+				   	  sake:seimaibuai 		"60%";
+				   	  sake:siyoumai			"たかね錦（新潟産）";
+				   	  sake:koubo      		"協会1601号";
+				sake:cost 			:2000yen_lebel;
+				sake:photo 			"http://thumbnail.image.rakuten.co.jp/@0_mall/ishikawasake/cabinet/shohinimage/japansake/koshinohomare_jyunma.jpg?_ex=200x200&s=0&r=1";
+				   	  sake:comment "越の誉の実力をかけて造られた入魂の純米吟醸酒。契約栽培米「たかね錦」を100％使用、米山山系の伏流水を使用し、名前の通り清らかに吟味された酒。なめらかで柔らかい口当たり、淡麗ながら喉ごしに深い味わいを感じさせる。";
+			   sake:url 			"http://item.rakuten.co.jp/ishikawasake/japansake-023/".
+
+:tanakakakuei a dbpedia-ja:大統領;
+			rdfs:label "田中角栄".
+:koshinohomare a dbpedia-ja:銘柄;
+			rdfs:label "越の誉".
+
+:harasyuzou	a 			dbpedia-ja:酒造;
+			rdfs:label 	"原酒造".
+
+:inniskillin_icewine_vidal_oak_aged_gold_label_2011 a 					wine:Wine;
+													rdfs:label 			"Inniskillin Icewine VIDAL OAK Aged Gold Label 2011";
+													sake:isAwardedBy 	:iwc;
+													sake:favoritePerson 	:obama;
+													sake:supply 		:ritz_carlton;
+													sake:supply 		:four_seasons;
+					 								sake:url 			"http://item.rakuten.co.jp/wineuki/1700002000075/".
+:obama 							a 					dbpedia-ja:大統領;
+	  							rdfs:label 			"バラク・オバマ".
+:ritz_carlton 					a 					:Hotel;
+			  					rdfs:label 			"The Ritz-Carlton".
+:four_seasons 					a 					:Hotel;
+			  					rdfs:label 			"Four Seasons Hotel".
+:pinot_aligote_selection 		a 					wine:Wine;
+						 		rdfs:label 			"Pinot Aligote Selection";
+						 		sake:favoritePerson 	:vladimir_vladimirovich_putin;
+						 		sake:url 			"http://www.budouya.jp/products/detail.php?product_id=1883".
+:vladimir_vladimirovich_putin 	a 					dbpedia-ja:大統領;
+							  	rdfs:label 			"ウラジーミル・プーチン".
+
+:kokuryu_daigin_ryu	a 					dbpedia-ja:日本酒;
+					rdfs:label 			"黒龍 大吟醸 龍";
+					sake:maker	 	:kokuryu_syuzou;
+					sake:brand 		:kokuryu;
+					sake:appearance 	:sakurasaku;
+					sake:supply			:jal;
+					sake:tasting 		:taste_fresh;
+					sake:sando 			"1.2";
+			   		sake:alcohol		"15~16度";
+				   	sake:nihonsyudo	"+4";
+				   	sake:aminosando 	"1.2";
+				   	sake:seimaibuai 	"40%";
+				   	sake:siyoumai		"山田錦（兵庫県産）";
+				   	sake:koubo      	"蔵内酵母";
+				   	sake:cost 			:4000yen_lebel;
+					sake:photo 			"http://zizakeclub.com/koku-gazou/koku-ryu-2.jpg";
+				   	  sake:comment "お酒をある程度寝かせていますので、黒龍の中ではコクがあり味わいも深いお酒です。もちろん黒龍の造りの流れに沿ったお酒ですので、優雅さと気品高さを同時にもったお酒です。";
+					sake:url 			"http://zizakeclub.com/koku-ryu.html".
+
+:kokuryu 			a 					dbpedia-ja:銘柄;
+					rdfs:label 			"黒龍".
+
+:kokuryu_syuzou		a 					dbpedia-ja:酒造;
+					rdfs:label 			"黒龍酒蔵";
+					sake:url 			"http://www.kokuryu.co.jp/".
+
+:sakurasaku			a 					dbpedia-ja:映画;
+					rdfs:label			"サクラサク".
+:mumm_cordon_rougr 	a 					wine:Wine;
+				   	rdfs:label 			"マム コルドン ルージュ ブリュット";
+				  	sake:appearance 	:casablanca;
+				  	sake:isAwardedBy 	:iwc;
+					sake:url 			"http://item.rakuten.co.jp/wineuki/500332/" .
+:casablanca 		a 					dbpedia-ja:映画;
+					rdfs:label 			"カサブランカ".
+
+:chateau_mouton_rothschild_1955 a 				wine:Wine;
+						   		rdfs:label 		"Chateau Mouton Rothschild 1955";
+						   		sake:appearance :diamonds_are_forever;
+					 		sake:url 			"http://www.wine-searcher.com/find/baron+philip+de+rothschild+mouton+pauillac+medoc+bordeaux+france/1955".
+:diamonds_are_forever a 			dbpedia-ja:映画;
+					  rdfs:label 	"007 ダイヤモンドは永遠に".
+
+:moet_chandon_brut_imperial a 				wine:Wine;
+							rdfs:label 		"Moet&Chandon Brut Imperial";
+							sake:appearance :titanic;
+					 		sake:url 		"" .
+:titanic a 			dbpedia-ja:映画;
+		 rdfs:label "タイタニック".
+
+
+:kuheiji a 				dbpedia-ja:日本酒;
+		 rdfs:label	 	"醸し人九平次 純米大吟醸　山田錦 EAU DU DESIR(希望の水）";
+		 sake:maker  "";
+		 sake:brand  :kamoshibito;
+		 sake:creater 	:fasion_model;
+		 sake:supply 	:hotel_ritz;
+		 sake:supply    :hotel_de_crillon;
+		 sake:supply	:guy_savoy;
+		 sake:appearance :asatyan;
+		 sake:tasting 	:taste_rose;
+		 sake:tasting 	:taste_melon;
+		 sake:tasting 	:taste_cumin;
+		 sake:tasting 	:taste_angelica;
+		 sake:sando 		"1.7";
+		 sake:alcohol		"16~17度";
+		 sake:nihonsyudo	"0";
+	     sake:aminosando 	"";
+		 sake:seimaibuai 	"50%";
+		 sake:siyoumai		"山田錦";
+		 sake:koubo      	"協会9号系";
+		 sake:cost 		:1000yen_lebel;
+		 sake:photo 			"http://image1.shopserve.jp/sakin21.com/pic-labo/limg/7405.jpg?t=20130310135805";
+		 sake:comment "肩張りラベルの、EAU DU DESIR（オウ・ド・デジール）とは希望の水と訳されます。フランスの三つ星レストランでもオンリストされ高い評価を得ています。　酸が独特で、日本酒離れした風味が漂い、上等な白ワインを飲んでいるかのような錯覚も感じます。";
+		 sake:url 		"http://kuheiji.co.jp/brand_more/index4.html" .	
+
+:kamoshibiti 		a 			dbpedia-ja:銘柄;
+					rdfs:label  "醸し人九平次".
+
+:hotel_ritz 		a 			dbpedia-ja:ホテル;
+					rdfs:label 	"ホテル・リッツ・パリ".
+:hotel_de_crillon 	a 			dbpedia-ja:ホテル;
+					rdfs:label 	"ホテル・デ・クリヨン".
+:guy_savoy 			a 			dbpedia-ja:レストラン;
+		   			rdfs:label 	"ギー・サヴォア（三ツ星レストラン）".
+:taste_rose 		a 			:Taste;
+					rdfs:label 	"ローズ".
+:taste_cumin 		a 			:Taste;
+			 		rdfs:label 	"クミン".
+:taste_angelica 	a 			:Taste;
+			   		rdfs:label 	"アンジェリカ".
+:asatyan a dbpedia-ja:テレビ番組;
+		rdfs:label 	"あさチャン" .
+
+:cattier_brut a 	wine:Wine;
+			  rdfs:label "Cattier Brut";
+			  sake:supply :hotel_ritz;
+			  sake:url 			"http://item.rakuten.co.jp/bacchus-m/cattier_b/" .
+:nicolas_feuillatte_champagne_grand_reserve_brut a 				wine:Wine;
+												 rdfs:label 	"Nicolas Feuillatte Champagne Grand Reserve Brut";
+												 rdfs:label 	"ニコラ・フィアット・シャンパーニュ・“グラン・レゼルヴ”ブリュット";
+												 sake:supply 	:guy_savoy;
+					 							 sake:url 		"http://item.rakuten.co.jp/wineuki/0103002005858/" . 
+
+:dainana_kimoto		 a 					dbpedia-ja:日本酒;
+					 rdfs:label 		"大七純米生酛";
+					 sake:maker 		"";
+					 sake:brand 		:dainana;
+					 sake:temperature 	:temp_40;
+					 sake:appearance 	:dancyu;
+					 sake:foodMatching 	:osechi;
+					 sake:tasting 		:taste_peach;
+					 sake:tasting 		:taste_mineral;
+					 sake:sando 		"1.6";
+					 sake:alcohol		"16~17度";
+					 sake:nihonsyudo	"+2";
+				     sake:aminosando 	"";
+					 sake:seimaibuai 	"65%";
+					 sake:siyoumai		"五百万石";
+					 sake:koubo      	"";
+					 sake:cost 			:1000yen_lebel;
+					 sake:comment 		"豊かなコクと旨味、酸味が完全に解け合い、後味のキレも良し。燗をつければつつみ込まれるような、心に染み入るおいしさです。１年熟成。月刊誌「dancyu」（1999年2月号）で日本一美味しいお燗酒に選ばれました。";
+					 sake:photo 		"http://img.edepart.7netshopping.jp/contents/inc/001/item/001000149654171/00100014965417142001/spec_800_00100014965417142001.jpg";
+					 sake:url 			"https://secure.daishichi.com/category/select/pid/4".
+
+:dainana 	a dbpedia-ja:銘柄;
+			rdfs:label "大七".
+:osechi a dbpedia-ja:おせち;
+		rdfs:label "おせち" .
+
+:dancyu 				a 			dbpedia-ja:雑誌;
+						rdfs:label 	"dancyu".
+:taste_peach 			a 			:SweetFruit;
+			 			rdfs:label 	"桃".
+:taste_mineral 			a 			:Taste;
+			   			rdfs:label 	"ミネラル".
+
+:sternthaler_gluhwein 	a 					wine:Wine;
+					  	rdfs:label 			"Sternthaler Gluhwein";
+					  	sake:temperature	:temp_40;
+					 	sake:url 			"http://item.rakuten.co.jp/donguriano/060101-1/#060101-1".
+:temp_40 					a 			dbpedia-ja:温度;
+						rdfs:label  "40度".
+:domaine_serene 		a 					wine:Wine;
+						rdfs:label			"ドメーヌ・セリーヌ・ピノ・ノワール・エヴァンスタッド・リザーヴ 2011";
+						sake:appearance 	:dancyu;
+					 		sake:url 			"http://item.rakuten.co.jp/kbwine/orc0085/#orc0085".
+:louis_roederer			a 					wine:Wine;
+				 		rdfs:label 			"Louis Roederer Carte Blanche Extra Dry";
+				 		rdfs:label 			"ルイ・ロデレール カルト・ブランシュ エクストラ・ドライ";
+				 		sake:foodMatching 	:osechi;
+					 	sake:url 			"https://vinica.me/Louis-Roederer-Carte-Blanche-Extra-Dry-w64659".
+
+
+:kawasemi a 				dbpedia-ja:日本酒;
+		  rdfs:label 		"カワセミの旅";
+		  sake:favoritePerson :jeanpaul_hevin;
+		  sake:isAwardedBy 	:salon_du_chocolat;
+		  sake:foodMatching :chocolat;
+		  sake:url 			"http://www.atarashiya.jp/rireki.php?id=4797d0309f776".
+
+:jeanpaul_hevin a 			:Creater;
+				rdfs:label 	"JEAN-PAUL HÉVIN".
+
+:salon_du_chocolat 	a 			:Contest;
+				 	rdfs:label 	"salon du chocolat".
+:chocolat a 			dbpedia-ja:おつまみ;
+		  rdfs:label 	"チョコレート".
+
+
+:shirahoshi a 				dbpedia-ja:日本酒;
+			rdfs:label  	"しゃんぽん　しらほし";
+			sake:maker  	:dena;
+			sake:url 		"https://www.baystars.co.jp/news/2015/04/0428_04.php" .
+
+:dena  a 			dbpedia-ja:企業;
+		rdfs:label 	"株式会社ディー・エヌ・エー" .
+
+
+		:wabizake a 			dbpedia-ja:日本酒;
+		  rdfs:label 	"純米吟醸酒「詫酒ごめんなさい」";
+		  sake:url 		"http://entabe.jp/news/gourmet/8400/wabizake-gomennnasai-sorry-nihonsyu" .
+
+
+:nanbu_jundaigin  a 				dbpedia-ja:日本酒;
+					rdfs:label 		"南部美人　純米大吟醸";
+					sake:maker 	:nanbu_syuzou;
+					sake:brand   :nanbubijin;
+					sake:isAwardedBy :juntai2012;
+					sake:appearance  :sakuraiariyoshi;
+					sake:appearance :waidosukuranburu;
+					sake:supply 	:tower_of_the_arabs;
+					sake:cost 		:5000yen_level;
+					sake:supply 	:jal;
+					sake:sando 		"1.4";
+					sake:alcohol	"16～17度";
+					sake:nihonsyudo	"＋1";
+				    sake:aminosando "";
+					sake:seimaibuai "35%";
+					sake:siyoumai	"山田錦";
+					sake:koubo      "ジョバンニ・他";
+					sake:comment 	"南部美人の商品の中でも最高峰に位置するお酒で、JALのファーストクラスで機内酒にも採用されたこともあります。芳醇な香りと濃密な味わいがバランス良く表現された格調高いお酒です。特別な日に飲んでください。";
+					sake:photo 		"http://www.nanbubijin.co.jp/wp/wp-content/uploads/2015/05/item_img_jyunmai-daiginjyou1.png";
+					sake:url 		"http://www.nanbubijin.co.jp/sake/nihonshu/type/junmai-daiginjo/junmai-daiginjo/".
+
+:nanbubijin     a 				dbpedia-ja:銘柄;
+				rdfs:label 		"南部美人".
+:juntai2012		a 				dbpedia-ja:コンテスト;
+				rdfs:label 		"純米大賞2012".
+:5000yen_level 	a 				dbpedia-ja:価格;
+				rdfs:label  	"5000円台".
+:nanbu_syuzou 	a 				dbpedia-ja:酒造;
+				rdfs:label 		"株式会社南部美人";
+				sake:appearance :hot_pepper.
+:sakuraiariyoshi a dbpedia-ja:テレビ番組;
+					rdfs:label "櫻井有吉アブナイ夜会" .
+:waidosukuranburu a dbpedia-ja:テレビ番組;
+					rdfs:label "ワイド！スクランブル" .
+
+:hot_pepper     a  				dbpedia-ja:雑誌;
+				rdfs:label 		"HOT PEPPER BEAUTY ".
+
+:nanbubijin		a 				dbpedia-ja:銘柄;
+				rdfs:label 		"南部美人".
+:lucien_crochet 	a 			wine:Wine;
+					rdfs:label 	"Lucien Crochet Sancerre Le Chene 2011";
+					sake:supply :tower_of_the_arabs;
+					sake:url 	"http://www.wine.com/v6/Lucien-Crochet-Sancerre-Le-Chene-2011/wine/124141/Detail.aspx".
+
+:tower_of_the_arabs a 			dbpedia-ja:ホテル;
+					rdfs:label 	"ブルジュ・アル・アラブ".
+:southern_belle_precious_syrah a wine:Wine;
+								rdfs:label "2011 Southern Belle Precious Syrah";
+								sake:comment "Southern Belle=南部美人" .
+:marimar_torres_pinot_noir 	a 			wine:Wine;
+							rdfs:label 	"マリマー・トーレス　ラ・マシア　ピノ・ノアール".
+
+:kubota_manju a 				dbpedia-ja:日本酒;
+			  rdfs:label 		"久保田　萬寿";
+			  sake:maker 	:asahi_syuzou;
+			  sake:brand 	:kubota;
+			  sake:appearance   :wbs;
+			  sake:use 			:jinkoueisei;
+			  sake:cost 		:3000yen_lebel;
+			  sake:sando 		"1.2";
+			  sake:alcohol		"15度";
+			  sake:nihonsyudo	"＋2.0";
+			  sake:aminosando 	"";
+			  sake:seimaibuai 	"35％";
+			  sake:siyoumai		"五百万石";
+			  sake:koubo      	"協会9号";
+			  sake:comment 		"香り、味ともに、蔵人が絶妙に仕上げた「久保田シリーズ」の最高峰です。柔らかな口当りと調和のとれた旨味で、軽く冷やしても、わずかに温めても、存在感を主張します。";
+			  sake:photo 		"http://www.asahi-shuzo.co.jp/brand/images/kubota_manju.jpg";
+			  sake:url 			"http://www.asahi-shuzo.co.jp/brand/kubota.html".
+
+:kubota 		a 					dbpedia-ja:銘柄;
+				rdfs:label 			"久保田".
+:asahi_syuzou 	a 					dbpedia-ja:酒造;
+			  	rdfs:label 			"朝日酒造";
+			  	sake:appearance 	:suiyouminaito;
+				sake:appearance  	:wbs;
+				sake:appearance 	:hiruobi.
+:suiyouminaito 	a 					dbpedia-ja:テレビ番組;
+				rdfs:label 			"水曜見ナイト".
+:hiruobi 		a 					dbpedia-ja:テレビ番組;
+				rdfs:label 			"ひるおび" .
+:jinkoueisei 	a 					dbpedia-ja:人工衛星;
+				rdfs:label 			"人工衛星" .
+
+:izora_kaberune a wine:Wine;
+				rdfs:label "イゾラ カベルネソーヴィニヨン 2013";
+				sake:winery :settesori .
+
+:settesori a dbpedia-ja:ワイナリー;
+			rdfs:label "セッテソリ";
+			sake:use :jinkoueisei .
+
+
+:1000yen_lower  a 					dbpedia-ja:価格;
+				rdfs:label 			"1000円以下" .
+:1000yen_lebel 	a 					dbpedia-ja:価格;
+				rdfs:label 			"1000円台".
+:2000yen_lebel 	a 					dbpedia-ja:価格;
+				rdfs:label 			"2000円台".
+:3000yen_lebel 	a 					dbpedia-ja:価格;
+				rdfs:label 			"3000円台".
+:4000yen_lebel 	a 					dbpedia-ja:価格;
+				rdfs:label 			"4000円台".
+
+:kachiuma 		a 	dbpedia-ja:日本酒;
+				rdfs:label 	"超特撰白雪純米大吟醸必勝の酒勝馬米";
+				sake:url 	"http://choujugura.com/SHOP/01316.html" .
+
+
+:juuyondai_ryuusen a dbpedia-ja:日本酒;
+				   rdfs:label "十四代　純米大吟醸　龍泉";
+				   sake:maker :takagi;
+				   sake:brand :juuyondai;
+				   sake:appearance 	:ametalk;
+				   sake:favoritePerson :suzukiTaku;
+				   sake:cost 		:3000yen_lebel;
+			  sake:sando 		"";
+			  sake:alcohol		"16度";
+			  sake:nihonsyudo	"";
+			  sake:aminosando 	"";
+			  sake:seimaibuai 	"35％";
+			  sake:siyoumai		"龍の落とし子";
+			  sake:koubo      	"";
+			  sake:url 			"http://www.sakeblog.info/juyondaijunmaidaiginjoryusen/";
+			  sake:comment "酒造好適米「龍の落とし子」を高精白し、限界低温発酵後、雫取り、斗瓶囲いしたものを氷温貯蔵し熟成させた、大極上諸白(だいごくじょうもろはく）【純米大吟醸】酒です。デキャンタボトルにおいては中国・明王朝の時代より宮廷で好まれたものをデザインし華麗に格調高く仕上げてあります。" .
+
+:ametalk a dbpedia-ja:テレビ番組;
+		rdfs:label "アメトーーク" .
+
+:takagi a dbpedia-ja:酒造;
+		rdfs:label "高木酒造株式会社" .
+
+:suzukiTaku a dbpedia-ja:芸能人;
+			rdfs:label "鈴木拓" .
+
+:juuyondai a dbpedia-ja:銘柄;
+     		rdfs:label "十四代";
+     		sake:appearance :sanmanomanma;
+     		sake:appearance :turube_kazoku;
+     		sake:favoritePerson :oikawaMituhiro .
+
+:sanmanomanma a dbpedia-ja:テレビ番組;
+  				rdfs:label "さんまのまんま";
+  				sake:person :akasiyaSanma .
+:turube_kazoku a dbpedia-ja:テレビ番組;
+				rdfs:label "鶴瓶の家族に乾杯" .
+:oikawaMituhiro a dbpedia-ja:芸能人;
+				rdfs:label "及川光博" .
+:wilhelm a wine:Wine;
+		rdfs:label "ロレンツ　ヴィルへム・テル アプフェルティッシュヴァイン 2013";
+		sake:favoritePerson :ookuboKayoko;
+		sake:appearance :ametalk .
+:ookuboKayoko a dbpedia-ja:芸能人;
+				rdfs:label "大久保佳代子" .
+
+
+:ichinokura_himezenn a dbpedia-ja:日本酒;
+					rdfs:label "一ノ蔵 ひめぜんきりり";
+					sake:appearance :jobtune .
+
+
+:jobtune a dbpedia-ja:テレビ番組;
+		rdfs:label "ジョブチューン" .
+
+:rojer_grato a wine:Wine;
+			rdfs:label "ロジャーグラート カヴァ ロゼ ブリュット";
+			sake:appearance :hirunandes;
+			sake:url "http://item.rakuten.co.jp/chuoshuhan/10000042/?scid=af_pc_ich_link_txt&sc2id=220519034" .
+
+:hirunandes a dbpedia-ja:テレビ番組;
+			rdfs:label "ヒルナンデス" .
+
+
+:hukuju_touketusyu a 					dbpedia-ja:日本酒;
+					rdfs:label 			"福寿 凍結酒";
+					sake:hasMakee 		:koubesyusinkan;
+					sake:brand 		:hukuju;
+					sake:appearance 	:ohayounihon;
+					sake:cost 			:1000yen_lower;
+					sake:sando 			"1.6";
+					sake:alcohol		"17.3度";
+					sake:nihonsyudo		"＋4.0";
+					sake:aminosando 	"1.7";
+					sake:seimaibuai 	"65％";
+					sake:siyoumai		"北錦";
+				 	sake:koubo      	"";
+					sake:comment 		"兵庫県が誇る日本一の酒米、山田錦を使った吟醸酒が自慢のお酒です。近年では、イチゴのようななめらかな香味の吟醸酒が安定して造られています。また、「凍結酒」も注目の商品でもあります。しぼりたての新鮮な原酒を瞬間冷凍させ、マイナス20℃という超低温にて保存したもので、この技術は神戸酒心館の特許商品でもあります。この技術は「科学技術庁長官賞」、「兵庫県発明賞」を受賞しました。";
+					sake:url 			"http://www.shushinkan.co.jp/toketu/index.html" .
+
+:ohayounihon a dbpedia-ja:テレビ番組;
+				rdfs:label "おはよう日本" .
+
+
+:maboroshi_jungin a dbpedia-ja:日本酒;
+					rdfs:label "誠鏡　幻赤箱";
+					sake:cost 	:4000yen_lebel;
+					sake:maker :nakao;
+					sake:appearance :asada_namadesu;
+					sake:koubo "りんご酵母" .
+
+:nakao a dbpedia-ja:酒造;
+		rdfs:label "中尾醸造" .
+:asada_namadesu a dbpedia-ja:テレビ番組;
+				rdfs:label "朝だ！生です旅サラダ" .
+
+:nanbu_daigin a dbpedia-ja:日本酒;
+				rdfs:label "南部美人　大吟醸";
+				sake:appearance :morning_bird 
+				sake:appearance dbpedia-ja:もやしもん .
+
+:morning_bird a dbpedia-ja:テレビ番組;
+			  rdfs:label "モーニングバード" .
+
+:densyu_tokujun a dbpedia-ja:日本酒;
+				rdfs:label "田酒　特別純米酒";
+				sake:maker 	:nishidasyuzou;
+			  sake:brand 	:densyu;
+			  sake:cost 		:1000yen_lebel;
+			  sake:sando 		"1.5";
+			  sake:alcohol		"15.5度";
+			  sake:nihonsyudo	"0";
+			  sake:aminosando 	"";
+			  sake:seimaibuai 	"55％";
+			  sake:siyoumai		"華吹雪";
+			  sake:koubo      	"";
+			  sake:comment 		"青森県産酒造好適米「華吹雪」を使用した地酒の銘品。辛口ながらコクがあり、飲み飽きしないすっきりした味。";
+			  sake:photo 		"http://shopping.c.yimg.jp/lib/okadayasaketen/densyu5.jpg";
+			  sake:url 			"http://store.shopping.yahoo.co.jp/okadayasaketen/10203.html";
+			  sake:scene 		:winnter;
+			  sake:foodMatching :tinjao;
+			  sake:foodMatching :kinkinonituke .
+
+:nishidasyuzou a dbpedia-ja:酒造;
+				rdfs:label "西田酒造店" .
+
+:densyu a dbpedia-ja:銘柄;
+		rdfs:label "田酒";
+		sake:comment "田の酒と書いて「でんしゅ」と読みます。「田」はもちろん、酒の元となる米が獲れる田んぼを意味し、名前の通り、日本の田以外の生産物である醸造用アルコール、醸造用糖類は一切使用していないことを力強く主張した、米の旨みが生きる旨口の純米酒です" .
+
+:winnter a :Scene;
+		rdfs:label "冬" .
+:tinjao a :Food;
+   		rdfs:label "青椒肉絲" .
+:kinkinonituke a :Food;
+				rdfs:label "キンキの煮付け" .
+
+:ampeleia a wine:Wine;
+			rdfs:label "ウンリトロ アンペレイア 2013";
+			sake:foodMatching :tinjao;
+			sake:url "http://ameblo.jp/venenciador/entry-11854702191.html" .
+
+:bon_gold a dbpedia-ja:日本酒;
+			rdfs:label "梵　GOLD　無濾過　純米大吟醸";
+			sake:maker 	:katoukippei;
+			  sake:brand 	:bon;
+			  sake:favoritePerson  :koizumi;
+			  sake:cost 		:1000yen_lebel;
+			  sake:sando 		"1.5";
+			  sake:alcohol		"15度";
+			  sake:nihonsyudo	"+1";
+			  sake:aminosando 	"";
+			  sake:seimaibuai 	"55％";
+			  sake:siyoumai		"山田錦";
+			  sake:koubo      	"KATO9号";
+			  sake:comment 		"無ろ過でピュアーなお酒のため、淡い黄金色が特徴で、酒本来の成分・白いおりを含んでいます。たまに沈殿致します。これが、このお酒が搾られてから、ほとんど手を加えていない特徴です。";
+			  sake:photo 		"";
+			  sake:url 			"http://www.jizake.com/html/SakeD3023_3.html" . 
+:bon a dbpedia-ja:銘柄;
+	rdfs:label "梵";
+	sake:supply :jal;
+	sake:isAwardedBy :iwc;
+	sake:isAwardedBy :isc;
+	sake:appearance :japantimes;
+	sake:comment "梵（ぼん：BORN）とはサンスクリット語で「けがれなき清浄」「真理をつく」と訳される言葉で、もう１つの読み方のBORNでは「誕生」「創造」を意味します。酒造業としての創業は１８６０年（万延元年）。この年は、桜田門外の変が起きた年です。" .
+
+:koizumi a dbpedia-ja:大統領;
+		rdfs:label "小泉純一郎" .
+
+:katoukippei a dbpedia-ja:酒造;
+				rdfs:label "加藤吉平商店" .
+
+:bon_yume a dbpedia-ja:日本酒;
+			rdfs:label "梵　夢は正夢";
+			sake:isAwardedBy :syuruikon;
+			sake:comment "鳩山首相がオバマ大統領に贈った酒。松井秀喜野球の館にニューヨークヤンキース優勝記念に贈呈" .
+:syuruikon a dbpedia-ja:コンテスト;
+			rdfs:label "全国酒類コンクール" .
+:isc a dbpedia-ja:コンテスト;
+		rdfs:label "インターナショナル・サケ・チャレンジ" .
+
+:japantimes a dbpedia-ja:新聞;
+			rdfs:label "ジャパンタイムズ" .
+
+:koshi_hon_tyou a dbpedia-ja:日本酒;
+				rdfs:label "越乃景虎　本醸造　超辛口";
+				sake:maker 	:morobashi;
+			  sake:brand 	:koshinokagetora;
+			  sake:person 		:uesugi_kenshin;
+			  sake:cost 		:1000yen_lebel;
+			  sake:sando 		"1.5";
+			  sake:alcohol		"15度";
+			  sake:nihonsyudo	"+13.0";
+			  sake:aminosando 	"1.1";
+			  sake:seimaibuai 	"55％";
+			  sake:siyoumai		"五百万石、ゆきの精";
+			  sake:koubo      	"";
+			  sake:comment 		"日本酒度が＋１３もある辛口のお酒ですが、口に含むと仕込み水からくる優しい口当たりが酒質ほどに辛さを強調せず、シャープで爽やかな味わいが感じられます。飲むにつれて徐々に辛さが現れ、キレの良い後味を締めくくります。";
+			  sake:photo 		"https://www.sakesake.com/item/kurabetu1/19/img/KTh2.jpg";
+			  sake:url 			"https://www.sakesake.com/item/kurabetu1/19/1-19-3.html" . 
+
+:morobashi a dbpedia-ja:酒造;
+			rdfs:label "諸橋酒造" .
+:koshinokagetora a dbpedia-ja:銘柄;
+				rdfs:label "越乃景虎";
+				sake:person 		:uesugi_kenshin;
+				sake:comment "「越乃景虎」という酒名は、ここ栃尾市が越後の名武将「上杉謙信」によって戦国の昔から「座」を開き、米作をおおいに奨励しながら盛んに取り組んできた地域であり、幼少時代を過ごしたゆかりの深い土地柄である事から、「上杉謙信」の元服名である「長尾景虎」にちなんで名前を命名されています。" .
+:uesugi_kenshin a dbpedia-ja:武将;
+				rdfs:label "上杉謙信" .
+
+
+:kenbishi_kuromatu a dbpedia-ja:日本酒;
+					rdfs:label "黒松剣菱";
+					sake:maker :kenbishisyuzou;
+					sake:brand :kenbishi .
+:kenbishisyuzou a dbpedia-ja:酒造;
+				rdfs:label "剣菱酒造" .
+:kenbishi a dbpedia-ja:銘柄;
+			rdfs:label "剣菱";
+			sake:appearance :kochikame;
+			sake:appearance :sukeban;
+			sake:person :akouroushi;
+			sake:person :tokugawa_yoshimune .
+
+:kochikame a dbpedia-ja:漫画;
+			rdfs:label "こちら葛飾区亀有公園前派出所" .
+:sukeban a dbpedia-ja:ドラマ;
+		rdfs:label "スケバン刑事II 少女鉄仮面伝説" .
+:akouroushi a dbpedia-ja:武将;
+			rdfs:label "赤穂浪士" .
+:tokugawa_yoshimune a dbpedia-ja:武将;
+					rdfs:label "徳川吉宗" .
+
+:nabeshima__daigin a dbpedia-ja:日本酒;
+					rdfs:label "鍋島　大吟醸";
+					sake:maker 	:hukuchiyo;
+					  sake:brand 	:nabeshima;
+					  sake:cost 		:3000yen_lebel;
+					  sake:appearance   :dancyu;
+					  sake:appearance   :news_every;
+					  sake:isAwardedBy  :iwc;
+					  sake:sando 		"";
+					  sake:alcohol		"17度";
+					  sake:nihonsyudo	"";
+					  sake:aminosando 	"";
+					  sake:seimaibuai 	"35％";
+					  sake:siyoumai		"山田錦";
+					  sake:koubo      	"";
+					  sake:comment 		"派手さはないが優雅さとエレガントさを感じる繊細な大吟醸。大吟醸らしい華やかな香りと山田錦を高精白し、丹念に麹作りを行ったことが伺えるしっかりとした骨格。これが大吟醸の本来あるべき姿だと言わんばかりの出来映えで、コストパフォーマンスも高い。ちょっと普段より良いお酒を振る舞いたいときにはおすすめの一本です。";
+					  sake:photo 		"http://www.urano-saketen.com/data/urano/product/2b50195155.jpg";
+					  sake:url 			"http://www.urano-saketen.com/product/93" .
+:hukuchiyo a dbpedia-ja:酒造;
+			rdfs:label "富久千代酒造" .
+:nabeshima a dbpedia-ja:銘柄;
+			rdfs:label "鍋島" .
+:news_every a dbpedia-ja:テレビ番組;
+			rdfs:label "news every" .
+
+:bin_333 a wine:Wine;
+		rdfs:label "BIN　333　ピノ・ノワール（ウィンダム・エステート）2013";
+		sake:favoritePerson :akasiyaSanma;
+		sake:url "http://item.rakuten.co.jp/wineuki/602473/" .
+:akasiyaSanma a dbpedia-ja:芸能人;
+			rdfs:label "明石家さんま";
+			sake:appearance :sanmanomanma .
+:tanba-rain a wine:Wine;
+			rdfs:label "タンバーライン　オレンジ・リザーヴ　メンバーズ　ソーヴィニヨン・ブラン";
+			sake:favoritePerson :ezumiMakiko;
+			sake:appearance :gutannubo;
+			sake:appearance :gochininarimasu .
+
+:ezumiMakiko a dbpedia-ja:芸能人;
+			rdfs:label "江角マキコ" .
+:gutannubo a dbpedia-ja:テレビ番組;
+			rdfs:label "グータンヌーボー" .
+:gochininarimasu a dbpedia-ja:テレビ番組;
+			rdfs:label "ゴチになります" .
+
+
+:koshinokanbai_bessen a dbpedia-ja:日本酒;
+						rdfs:label "越乃寒梅 別撰";
+						sake:maker :ishimoto;
+						sake:brand :koshinokanbai;
+						sake:appearance :wbs;
+						sake:cost 		:1000yen_lebel;
+						sake:sando 		"";
+					  sake:alcohol		"16-17度";
+					  sake:nihonsyudo	"+7";
+					  sake:aminosando 	"";
+					  sake:seimaibuai 	"55％";
+					  sake:siyoumai		"五百万石（新潟）・美山錦（長野）・越淡麗（新潟）";
+					  sake:koubo      	"";
+					  sake:comment 		"";
+					  sake:photo 		"http://www.yoi-sake.com/kanbai/image/photo-bessen.jpg";
+					  sake:url 			"http://koshinokanbai.co.jp/product_05.html" .
+
+:ishimoto a dbpedia-ja:酒造;
+			rdfs:label "石本酒造" .
+:koshinokanbai a dbpedia-ja:銘柄;
+				rdfs:label "越乃寒梅";
+				sake:appearance :nepuri-gu;
+				sake:person :nakaoAkira;
+				sake:person :ikenamiShino;
+				sake:person :ozawaMaju .
+:wbs a dbpedia-ja:テレビ番組;
+	rdfs:label "ワールドビジネスサテライト" .
+:ozawaMaju a dbpedia-ja:芸能人;
+			rdfs:label "小沢真珠" .
+:nepuri-gu a dbpedia-ja:テレビ番組;
+			rdfs:label "ネプリーグ" .
+:nakaoAkira a dbpedia-ja:芸能人;
+			rdfs:label "中尾彬" .
+:ikenamiShino a dbpedia-ja:芸能人;
+				rdfs:label "池波志乃" .
+
+:grace_meruro a wine:Wine;
+			  rdfs:label "グレイスメルロ2009";
+			  sake:appearance :jobtune;
+			  sake:appearance :japantimes .
+
+:grace_kaberune a wine:Wine;
+				rdfs:label "グレイス カベルネ・ソーヴィニヨン";
+				sake:appearance :kanburia .
+
+:zankyou9 a dbpedia-ja:日本酒;
+			rdfs:label "残響super9";
+			sake:person "福山雅治" .
+
+:ryuujinmaru a dbpedia-ja:日本酒;
+			rdfs:label "龍神丸　大吟醸生原酒";
+			omment "5話に登場";
+			sake:appearance dbpedia:もやしもん . 
+:aramasa_six a dbpedia-ja:日本酒;
+			rdfs:label "新政　六號";
+			sake:appearance dbpedia-ja:もやしもん;
+			comment "5話に登場" .
+:nikkamusou a dbpedia-ja:日本酒;
+			rdfs:label "日下無双";
+			sake:appearance dbpedia-ja:もやしもん;
+			comment "5話に登場" .
+:hukusyougun a dbpedia-ja:日本酒;
+			rdfs:label "副将軍";
+			sake:appearance dbpedia-ja:もやしもん;
+			comment "5話に登場" .
+:hukusyougun a dbpedia-ja:日本酒;
+			rdfs:label "飛露喜";
+			sake:appearance dbpedia-ja:もやしもん;
+			comment "5話に登場" .
+
+#「越乃寒梅(新潟)」「千徳(宮崎)」「八鶴(青森)」「真澄(長野)」「浦霞(宮城)」「カープ(広島)」があぶさんに登場（http://www.notasalmon.jp/learn/1158/）
+#「ちいちゃんのおしながき繁盛記」に酔鯨が登場（http://www.notasalmon.jp/learn/1245/）
+#飛良泉　山廃純米酒が「私のアイザック」に登場(http://www.notasalmon.jp/learn/1155/)
+#「茶柱倶楽部」に長者盛が登場(http://www.notasalmon.jp/learn/1466/)
+#「おとりよせ王子 飯田好実」にすず音が登場
+#漫画家が好きな日本酒リスト（http://www.notasalmon.jp/learn/2593/）
+#上善如水　ゆるゆり

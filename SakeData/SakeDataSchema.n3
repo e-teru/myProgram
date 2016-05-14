@@ -1,0 +1,40 @@
+@prefix rdf:  	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix ont:  	<http://www.daml.org/2001/03/daml-ont#> .
+@prefix sake:	<http://www.ohsuga.is.uec.ac.jp/sake/> .
+@prefix brewery:	<http://www.ohsuga.is.uec.ac.jp/sake/brewery/> .
+@prefix base:	<http://www.ohsuga.is.uec.ac.jp/property/> .
+@prefix bevon: 	<http://rdfs.co/bevon/> .
+@prefix dbpedia-ja: <http://ja.dbpedia.org/resource/> .
+@prefix schema:	<http://schema.org/> .
+@prefix temp:	<http://www.ohsuga.is.uec.ac.jp/sake/temperature/>
+
+
+#純米活性にごり　都美人　生原酒
+メロンのようなフルーティーな香り。微炭酸で酸味がある。
+
+
+
+
+base:1 a dbpedia-ja:日本酒;
+	base:URL "http://www.kokuryu.co.jp/brew/kokuryu/kodawari.html" ;
+	base:
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/URL_en> "http://www.oenon.jp/english/" ;
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/アルコール度数>	"18" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/メーカー希望小売価格>	"2775円" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/使用米>	"吟風" ; 
+	rdfs:label	"清酒　北の誉　純米原酒　侍"@ja ; 
+	rdfs:label	"Kitanohomare Junmai Ginjo Samurai"@en ;
+	rdfs:comment	"Established in 1901, Kitanohomareis Otaru's oldest sake brewery. The 'Sakaizumi-kan' sake museum provides a glimpse at the brewery's history and a taste of the sake produced here. Exhibits include tools used in sake brewing, earthenware barrels, and models that reproduce the scenes of sake brewing in the past. You can sample various types of Kotanohomare sakes, as well as purchase unique products that are only available in the Sakaizumi-kan. Tours of the brewery are also available."@en ;
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/容量>	"1800ml" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/掛米>	"60%" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/日本酒度>	"+2" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/画像URL>	"http://www.kuramotokai.com/show_image.php?filename=/home1/webjobmgr/sites/www.kuramotokai.com/kuramoto/web/images/kikou/kura/5_7016010.jpg&width=130&height=130" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/相性の良い料理例>	"照り焼き、鮭のチャンチャン焼き" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/種類>	"純米" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/蔵元>	<http://www.ohsuga.is.uec.ac.jp/sake/brewery/北の誉酒造_北海道> ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/都道府県>	<http://ja.dbpedia.org/resource/北海道> ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/酸度>	"1.6" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/香味>	"北海道産の酒造好適米・吟風を６０％まで磨き、小樽の雪清水により丹念に仕込みました。侍(ＳＡＭＵＲＡＩ)の名に相応しい、純米原酒のコクと切れ味のある辛口をお楽しみください。" ; 
+	<http://www.ohsuga.is.uec.ac.jp/sake/property/麹米>	"60%" .
+

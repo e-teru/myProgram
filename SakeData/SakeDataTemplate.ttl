@@ -1,0 +1,40 @@
+sake:1	a	dbpedia-ja:日本酒;
+	a bevon:Sake;
+	base:URL "" ;
+	base:URL_en "" ;
+	bevon:proof	"" ; 
+	base:hasVolume	sake:1_720;
+	base:hasVolume	sake:1_1800;
+	base:useRice	"" ; 
+	rdfs:label	""@ja ; 
+	rdfs:label	""@en ;
+	rdfs:comment	""@ja ;
+	base:kakemai	"" ; 
+	base:koujimai	"" ;
+	base:nihonsyu-do	"" ; 
+	base:san-do	"" ;
+	schema:photo	"" ; 
+	bevon:food	"" ; 
+	base:optimumTemperature	temp:
+	base:tokuteimeishou	"" ; 
+	base:sakeBrewery	sakeBrewery:1 ; 
+	base:hasFlavor	"" .
+
+sake:1_720 schema:price	"" ; 
+	bevon:volume	""^^xsd:integer .
+sake:1_1800 schema:price	"" ; 
+	bevon:volume	""^^xsd:integer .
+
+sakeBrewery:1 a schema:Brewery;
+	schema:faxNumber	"" ;
+	schema:telephone	"" ;
+	schema:url	"" ;
+	schema:address	"" ;
+	geo:lat	""^^xsd:float ;
+	geo:lng	""^^xsd:float ;
+	base:place1	dbpedia-ja: ;
+	base:place2	dbpedia-ja: ;
+	base:place3	dbpedia-ja: ;
+	base:	"キクヒメ" ;
+	base:waterQuality	dbp-ja:軟水 ;
+	rdfs:label	"" .
